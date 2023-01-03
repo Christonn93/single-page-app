@@ -70,8 +70,12 @@
   width: 5px;
 }
 
-.icon-fill {
+.icon-fill-active {
   color: #00f2fe;
+}
+
+.icon-fill {
+  color: #3b4848;
 }
 
 h1, .h1 {
