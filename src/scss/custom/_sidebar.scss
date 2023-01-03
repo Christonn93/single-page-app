@@ -1,0 +1,48 @@
+.side-bar {
+    background-color: #262730;
+    border-radius: 10rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 3rem);
+    overflow: auto;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    z-index: 5;
+    padding: 2.5rem 0;
+}
+
+.nav-links {
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.nav-links li {
+    cursor: pointer;
+    list-style: none;
+    margin-bottom: 2.5rem;
+    padding: 0 1.25rem;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.indicator {
+    background-color: #00f2fe;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 0 8px #00f2fe;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 5px;
+}
+
+.icon-fill {
+    color: #00f2fe;
+}
