@@ -3,3 +3,7 @@ scrollToTop()
 
 import { pageRouter } from './src/js/index.js'
 pageRouter()
+
+
+import { cardImage } from './src/js/templates/projects/image.js'
+cardImage()

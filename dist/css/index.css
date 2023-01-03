@@ -74,6 +74,14 @@
   color: #00f2fe;
 }
 
+h1, .h1 {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
