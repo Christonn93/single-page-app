@@ -1,14 +1,14 @@
-import AbstractView from "../ui/abstractView.js";
+import AbstractView from '../ui/abstractView.js';
 
 export default class extends AbstractView {
-    constructor(params) {
-        super(params);
-        this.setTitle("Project");
-    }
+  constructor(params) {
+    super(params);
+    this.setTitle('Project');
+  }
 
-    async getHtml() {
-        return `
+  async getHtml() {
+    return `
             <h1>Project</h1>
         `;
-    }
+  }
 }
