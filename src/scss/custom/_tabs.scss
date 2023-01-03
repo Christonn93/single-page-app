@@ -1,0 +1,25 @@
+.nav-tabs {
+    border-color: #055160 !important;    
+}
+
+.nav-tabs .nav-item .nav-link {
+    background-color: transparent;
+  }
+  
+  .nav-tabs .nav-item .nav-link:hover {
+    border-color: #055160;
+  }
+
+  .nav-tabs .nav-item .nav-link.active {
+    background-color: transparent;
+    border-color: #055160;
+  }
+  
+  .tab-content {
+    border-top: transparent;
+  }
+  
+  .tab-content .tab-pane {
+    min-height: 200px;
+    height: auto;
+  }

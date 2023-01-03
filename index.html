@@ -19,64 +19,37 @@
   <body class="d-flex flex-column flex-fill min-vh-100 gap-4">
     <button class="btn shadow-lg" id="scrollToTop"><i class="fa-solid fa-arrow-up icon-fill"></i></button>
 
-    <!-- Header -->
-    <header></header>
-
     <!-- Main -->
     <main>
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-1">
-            <div class="side-bar">
-              <ul class="nav-links">
-                <li class="nav-link" id="home">
-                  <div class="indicator"></div>
-                  <a href="/" class="nav__link" data-link><i class="fa-solid fa-house icon-fill-active"></i></a>
-                </li>
-                <li class="nav-link" id="project">
-                  <a href="/Project" class="nav__link" data-link><i class="fa-solid fa-code icon-fill"></i></a>
-                </li>
-                <li class="nav-link" id="about">
-                  <a href="/About" class="nav__link" data-link><i class="fa-solid fa-user-large icon-fill"></i></a>
-                </li>
-              </ul>
+        <div class="d-flex gap-5">
+          <div>
+            <div class="position-relative">
+              <div class="side-bar">
+                <ul class="nav-links">
+                  <li class="nav-link" id="home">
+                    <div class="indicator"></div>
+                    <a href="/" class="nav__link" data-link><i class="fa-solid fa-house icon-fill-active"></i></a>
+                  </li>
+                  <li class="nav-link" id="project">
+                    <a href="/Project" class="nav__link" data-link><i class="fa-solid fa-code icon-fill"></i></a>
+                  </li>
+                  <li class="nav-link" id="about">
+                    <a href="/About" class="nav__link" data-link><i class="fa-solid fa-user-large icon-fill"></i></a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="col-11">
-            <div id="app" class="mx-5"></div>
+          <div class="w-100">
+            <div id="app" class="mx-5 mt-5"></div>
           </div>
+
         </div>
       </div>
     </main>
-
     <!-- Footer -->
-    <footer></footer>
-
-    <!-- Templates -->
-
-    <!-- Profile -->
-    <template id="profile-image">
-      <img src="#">      
-    </template>
-
-
-    <!-- Cards -->
-    <template id="card-image">
-      <img src="#" class="card-img-top">
-    </template>
-
-    <template id="card-title">
-      <h5 class="card-title"></h5>
-    </template>
-
-    <template id="card-description">
-      <p class="card-text"></p>
-    </template>
-
-    <template id="card-link">
-      <a href="#" class="card-link"></a>
-    </template>
-
+    <footer class="mt-auto"></footer>
     <!-- Scripts -->
     <script src="/index.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

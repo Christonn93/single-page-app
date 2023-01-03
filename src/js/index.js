@@ -1,6 +1,7 @@
 import Home from './views/home.js';
 import Project from './views/project.js';
 import About from './views/about.js';
+import Details from './views/projectDetails.js'
 
 export const pageRouter = () => {
   const pathToRegex = (path) => new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$');
@@ -26,6 +27,7 @@ export const pageRouter = () => {
       { path: '/', view: Home },
       { path: '/Project', view: Project },
       { path: '/About', view: About },
+      {path: '/Details', view: Details }
     ];
 
     // Test each route for potential match

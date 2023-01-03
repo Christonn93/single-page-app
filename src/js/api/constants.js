@@ -1,0 +1,1 @@
+export const base_url = `http://christopher-tonnesland.no/storage_wp_api/wp-json/wp/v2`

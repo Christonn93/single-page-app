@@ -1,7 +1,10 @@
-@import './custom/buttons';
-@import './custom/sidebar';
+@import './custom/themeColors';
+@import './custom/tabs';
 @import './custom/fonts';
+@import './custom/sidebar';
+@import './custom/projectCards';
 @import './custom/images';
+@import './custom/buttons';
 
 
 @import '../../node_modules/bootstrap/scss/bootstrap';
@@ -11,5 +14,6 @@ body {
   background-color: #1a1c22;
   margin: 0;
   padding: 0;
-  color: white;
+  color: #d1d3d8;
 }
+

@@ -1,0 +1,25 @@
+.project-cards {
+    max-width: 22rem;
+}
+
+.card-hover:hover{
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.15) !important;
+    cursor: pointer;
+}
+
+.card-link-custom {
+    color: #999999;
+}
+
+.card-link-custom:hover {
+    color: #00f2fe;
+}
+
+p[data-description] {
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.overflow-ellipsis {
+    text-overflow: ellipsis;
+}

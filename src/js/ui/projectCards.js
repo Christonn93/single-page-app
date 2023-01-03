@@ -1,38 +1,49 @@
-import { storedPosts } from "../api/fetchPosts";
+import { storedPosts } from '../api/fetchPosts';
 
 export const cardItems = async () => {
-    const res = await storedPosts();
-    const gallery = document.getElementById("projectsGallery")
-    res.forEach(el => {
-        const itemDetails = el.acf
-        const {page_title: title, repo_link: repo, site_image: image, livesite: site, description} = itemDetails
+  const res = await storedPosts();
+  const gallery = document.getElementById('projectsGallery');
+  const school =  document.getElementById('school');
+  const work =  document.getElementById('work');
+  const fun =  document.getElementById('forFun');
 
-        const cards = document.createElement("div");
-        cards.classList.add('card', 'bg-transparent')
-        cards.style = "width: 18rem;";
-        
-        cards.innerHTML = `
+  res.forEach((el) => {
+    const itemDetails = el.acf;
+    const { page_title: title, repo_link: repo, site_image: image, live_site: site, description, year, relation} = itemDetails;
+
+    console.log(el.acf);
+
+    const cards = document.createElement('div');
+    cards.classList.add('col');
+
+
+    cards.innerHTML = `<div class="card bg-transparent shadow card-hover h-100 project-cards">
         <div class="image-ratio">
         <img src="${image}" class="card-img-top image">
         </div>
-        <div class="card-body">
-          <h5 class="card-title">${title}</h5>
-          <p class="card-text">${description}</p>
+        <div class="card-body" data-cardBody>
+          <h3 class="card-title">${title}</h5>
+          <p class="card-text overflow-ellipsis">${description}</p>
         </div>
-        <ul class="list-group list-group-flush bg-transparent">
-          <li class="list-group-item bg-transparent">
-            <a href="${site}" class="card-link">Live site</a>
-          </li>
-          <li class="list-group-item bg-transparent">
-            <a href="${repo}" class="card-link">Github repo</a>
-          </li>
-        </ul>`
+          <div class="d-flex gap-2 justify-content-center p-3">
+            <a href="${site}" class="card-link-custom" target="_blank"><i class="fa-solid fa-up-right-from-square"></i> Live site</a>
+            <a href="${repo}" class="card-link-custom" target="_blank"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+          </div>`;
 
-        gallery.append(cards)
-        return cards
+        if(relation == 'School'){
+          document.querySelector(".empty").classList.add('d-none')
+          school.append(cards);
+        }
+        
+        if(relation == 'work'){
+          document.querySelector(".empty").classList.add('d-none')
+          work.append(cards);
+        }
 
-      });
-
-
-
-}
+        if(relation == 'fun'){
+          document.querySelector(".empty").classList.add('d-none')
+          fun.append(cards);
+        }
+  });
+};

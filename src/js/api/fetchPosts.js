@@ -1,5 +1,7 @@
+import { base_url } from "./constants";
+
 export async function storedPosts() {
-  const req = await fetch('http://christopher-tonnesland.no/storage_wp_api/wp-json/wp/v2/posts');
+  const req = await fetch(base_url + '/posts');
 
   if (req.ok) {
     return await req.json();
