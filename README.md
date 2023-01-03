@@ -2,8 +2,8 @@
 
 ## Credits
 
-[Sidebar design inspiration](https://codepen.io/jash_139/pen/OJOwQEz?editors=1100)
-[Single page app](https://www.youtube.com/watch?v=6BozpmSjk-Y)
+- [Sidebar design inspiration](https://codepen.io/jash_139/pen/OJOwQEz?editors=1100)
+- [Single page app](https://www.youtube.com/watch?v=6BozpmSjk-Y)
 
 ## About and Contact
 
