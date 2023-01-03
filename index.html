@@ -44,21 +44,6 @@
           </div>
           <div class="col-11">
             <div id="app" class="mx-5"></div>
-            <template id="list-item">
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <a href="#" class="card-link">Live site</a>
-                  </li>
-                  <li class="list-group-item"><a href="#" class="card-link">Github repo</a></li>
-                </ul>
-              </div>
-            </template>
           </div>
         </div>
       </div>
@@ -66,6 +51,26 @@
 
     <!-- Footer -->
     <footer></footer>
+
+    <!-- Templates -->
+    <template id="card-template">
+      <div class="card" style="width: 18rem;">
+        <img src="#" class="card-img-top" id="siteImage">
+        <div class="card-body">
+          <h5 class="card-title" id="siteTitle"></h5>
+          <p class="card-text" id="siteDescription"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a href="#" class="card-link" id="siteLink">Live site</a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="card-link" id="repoLink">Github repo</a>
+          </li>
+        </ul>
+      </div>
+    </template>
+
 
     <!-- Scripts -->
     <script src="/index.js" type="module"></script>
