@@ -24,10 +24,10 @@ export const pageRouter = () => {
 
   const router = async () => {
     const routes = [
-      { path: '/', view: Home },
-      { path: '/Project', view: Project },
-      { path: '/About', view: About },
-      {path: '/Details', view: Details }
+      { path: './', view: Home },
+      { path: './Project', view: Project },
+      { path: './About', view: About },
+      {path: './Details', view: Details }
     ];
 
     // Test each route for potential match
