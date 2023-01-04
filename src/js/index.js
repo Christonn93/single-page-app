@@ -1,67 +1,60 @@
 import Home from './views/home.js';
 import Project from './views/project.js';
 import About from './views/about.js';
-import Details from './views/projectDetails.js'
+import Details from './views/projectDetails.js';
 
-export const pageRouter = () => {
-  const pathToRegex = (path) => new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$');
-
-  const getParams = (match) => {
-    const values = match.result.slice(1);
-    const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map((result) => result[1]);
-
-    return Object.fromEntries(
-      keys.map((key, i) => {
-        return [key, values[i]];
-      })
-    );
-  };
-
-  const navigateTo = (url) => {
-    history.pushState(null, null, url);
-    router();
-  };
-
-  const router = async () => {
-    const routes = [
-      { path: './', view: Home },
-      { path: './Project', view: Project },
-      { path: './About', view: About },
-      {path: './Details', view: Details }
+class Router {
+  constructor() {
+    this.routes = [
+      { path: '/', view: Home },
+      { path: '/Project', view: Project },
+      { path: '/About', view: About },
+      { path: '/Details', view: Details },
     ];
+    this.rootElem = document.querySelector('#app');
+    this.currentView = null;
 
-    // Test each route for potential match
-    const potentialMatches = routes.map((route) => {
-      return {
-        route: route,
-        result: location.pathname.match(pathToRegex(route.path)),
-      };
-    });
+    this.init();
+  }
 
-    let match = potentialMatches.find((potentialMatch) => potentialMatch.result !== null);
+  init() {
+    window.addEventListener('popstate', () => this.handleRoute());
+    this.handleRoute();
+  }
 
-    if (!match) {
-      match = {
-        route: routes[0],
-        result: [location.pathname],
-      };
+  async handleRoute() {
+    const path = window.location.pathname;
+    const route = this.routes.find(r => r.path === path);
+
+    if (!route) {
+      console.error(`Route not found: ${path}`);
+      return;
     }
 
-    const view = new match.route.view(getParams(match));
+    if (this.currentView) {
+      this.currentView.destroy();
+    }
 
-    document.querySelector('#app').innerHTML = await view.getHtml();
-  };
+    this.currentView = new route.view();
+    this.rootElem.innerHTML = await this.currentView.getHtml();
+    this.currentView.init();
+  }
 
-  window.addEventListener('popstate', router);
+  navigate(path) {
+    history.pushState(null, null, path);
+    this.handleRoute();
+  }
+}
+
+export const pageRouter = () => {
+  const router = new Router();
 
   document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', (e) => {
       if (e.target.matches('[data-link]')) {
         e.preventDefault();
-        navigateTo(e.target.href);
+        router.navigate(e.target.href);
       }
     });
-
-    router();
   });
 };
