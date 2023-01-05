@@ -1,4 +1,4 @@
-import { storedPosts } from "../api/fetchPosts";
+import { storedPosts } from "../api/fetchPosts.js";
 
 export const cardItems = async () => {
     const res = await storedPosts();

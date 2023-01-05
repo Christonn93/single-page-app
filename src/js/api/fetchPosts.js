@@ -1,4 +1,4 @@
-import { base_url } from "./constants";
+import { base_url } from "./constants.js";
 
 export async function storedPosts() {
   const req = await fetch(base_url + '/posts');

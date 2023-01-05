@@ -1,4 +1,4 @@
-import { templateInstance } from "../instance"
+import { templateInstance } from "../instance.js"
 
 export const cardHeader = (item) => {
     const clone = templateInstance('card-title')
