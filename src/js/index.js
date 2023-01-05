@@ -38,6 +38,31 @@ class Router {
     this.currentView = new route.view();
     this.rootElem.innerHTML = await this.currentView.getHtml();
     this.currentView.init();
+
+    // Add the 'active' class to the active link element
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      const i = link.querySelector('i');
+      if (link.getAttribute('href') === path) {
+        i.classList.add('icon-fill-active');
+
+        // Find the 'li' element that contains the active link element
+        let li = link.parentNode;
+        while (li && li.tagName !== 'LI') {
+          li = li.parentNode;
+        }
+
+        // If the 'li' element is found and the 'i' element has the 'active-icon' class, insert the 'div' element with the 'indicator' class after the 'li' element
+        if (li && i.classList.contains('active-icon')) {
+          const div = document.createElement('div');
+          div.classList.add('indicator');
+          li.appendChild(div);
+        }
+      } else {
+        i.classList.remove('icon-fill-active');
+        i.classList.add('icon-fill')
+      }
+    });
   }
 
   navigate(path) {
